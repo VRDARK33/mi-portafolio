@@ -249,6 +249,47 @@ nav a:hover {
     gap: 1.5rem;
 }
 
+/* Recuadro para la imagen del proyecto */
+.proyecto-imagen {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--bg-primary);
+    border: 1px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proyecto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Se oculta si la imagen carga; visible mientras no hay imagen */
+.proyecto-imagen img[src=""],
+.proyecto-imagen img:not([src]) {
+    display: none;
+}
+
+.proyecto-imagen-placeholder {
+    position: absolute;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: rgba(217, 236, 239, 0.4);
+    letter-spacing: 0.5px;
+}
+
+/* Cuando la imagen tiene ruta, se oculta el texto marcador */
+.proyecto-imagen img:not([src=""]) + .proyecto-imagen-placeholder {
+    display: none;
+}
+
 .proyecto-card a {
     text-decoration: none;
     color: var(--text-white);
